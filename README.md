@@ -10,13 +10,15 @@ The WORd Transformer tool allows you to drag/drop files onto a batch file that w
 - Input files must be of a format that MS Word can open
 - Output files can only be in a format that MS Word can open
 
-## Useage
+## Usage
 
 Select all of the files you wish to convert and drag & drop them onto the `.bat` file. This will spawn a Command Window that will ask you to enter an ID of the format you want for the output file (see Output Format IDs) followed by the `ENTER` key. If you do not specify an ID and hit enter, the tool will default to an ID of 16 which will produce "wdFormatDocumentDefault" `.DOCX` files as this is the most common use of the tool at the time of development.
 
 ## Valid Output Format IDs
 
-Table taken from [Microsoft Docs](https://docs.microsoft.com/en-us/office/vba/api/word.wdsaveformat)
+The following table was taken from [Microsoft Docs](https://docs.microsoft.com/en-us/office/vba/api/word.wdsaveformat)
+
+I've highlighted in **bold** the three formats I use most commonly:
 
 | Name                                | Value  | Description                                                               |
 | ----------------------------------- | ------ | ------------------------------------------------------------------------- |
