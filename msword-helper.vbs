@@ -1,4 +1,4 @@
-DIM wdFormat
+DIM wdFormat, fileIn, fileOut
 
 If Wscript.Arguments.Count > 1 Then
     If Wscript.Arguments(1) = "" Then
@@ -9,11 +9,8 @@ If Wscript.Arguments.Count > 1 Then
 End If
 
 
-DIM fileIn
-    fileIn = WScript.Arguments(0)
-DIM fileOut
-    fileOut = fileIn
-	fileOut = Left(fileOut, InstrRev(fileOut, ".")-1)
+fileIn = WScript.Arguments(0)
+fileOut = Left(fileIn, InstrRev(fileIn, ".")-1)
 
 SET objWord = CreateObject("Word.Application")
     objWord.Visible = False
@@ -21,9 +18,9 @@ SET objWord = CreateObject("Word.Application")
 
 SET objDoc = objWord.ActiveDocument
     objDoc.SaveAs fileOut, wdFormat
-
     objDoc.Close
-SET objDoc = Nothing
 
     objWord.Quit
+
+SET objDoc = Nothing
 SET objWord = Nothing
